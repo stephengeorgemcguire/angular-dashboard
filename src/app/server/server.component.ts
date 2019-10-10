@@ -36,7 +36,7 @@ export class ServerComponent implements OnInit
   }
   toggleStatus()
   {
-    this.setServerStatus( !onLineStatus );
+    this.setServerStatus( !this.serverInput.isOnline );
   }
 
 }

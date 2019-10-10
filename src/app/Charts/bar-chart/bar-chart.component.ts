@@ -23,10 +23,11 @@ export class BarChartComponent implements OnInit
   /**
    * barChartOptions
    */
-  public barChartOptions: any = {
-    scaleShowVerticleLines: false,
+  public barChartOptions: any[] = [ {
+    scaleShowVerticalLines: false,
     responsive: true
-  };
+  }
+  ];
 
 
   ngOnInit()

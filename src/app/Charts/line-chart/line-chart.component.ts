@@ -28,7 +28,8 @@ export class LineChartComponent implements OnInit
    * lineChartOptions
    */
   public lineChartOptions: any = {
-    responsive: true
+    responsive: true,
+    maintainAspectRatio: false
   };
 
   ngOnInit()

@@ -1,0 +1,7 @@
+{
+    "editor.fontSize": 18,
+    "editor.formatOnSave": true,
+    "editor.formatOnPaste": true,
+    "editor.tabCompletion": "on",
+    "emmet.triggerExpansionOnTab": true
+}

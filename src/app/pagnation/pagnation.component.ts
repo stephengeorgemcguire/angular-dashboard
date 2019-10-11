@@ -15,6 +15,9 @@ export class PagnationComponent implements OnInit
   @Input() loading: boolean;
 
   @Output() goPrev = new EventEmitter<boolean>();
+  @Output() goNext = new EventEmitter<boolean>();
+  @Output() goPage = new EventEmitter<number>();
+
   constructor() { }
 
   ngOnInit()
@@ -24,6 +27,26 @@ export class PagnationComponent implements OnInit
   onPrev(): void
   {
     this.goPrev.emit( true );
+  }
+
+  onNext(): void
+  {
+    this.goNext.emit( true );
+  }
+
+  onPage( n: number ): void
+  {
+    this.goPage.emit( n );
+  }
+
+  totalPages(): number
+  {
+    return Math.ceil( this.count / this.perPage ) || 0;
+  }
+
+  isLastPage(): boolean
+  {
+    return this.perPage * this.perPage >= this.count;
   }
 
 }

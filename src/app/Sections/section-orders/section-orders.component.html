@@ -23,5 +23,6 @@
       </tr>
     </tbody>
   </table>
-  <app-pagnation (goPrev)="goToPrevious()"></app-pagnation>
+  <app-pagnation (goNext)="goToNext()" [page]="page" [count]="total" [perPage]="limit" (goToPage)="goToPage($event)"
+    (goPrev)="goToPrevious()"></app-pagnation>
 </div>

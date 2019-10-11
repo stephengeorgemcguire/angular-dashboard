@@ -9,6 +9,7 @@ import { Order } from '../../Shared/order';
 export class SectionOrdersComponent implements OnInit
 {
 
+  // constructor( private _salesData: SalesDataService ) { }
   constructor() { }
 
   orders: Order[] = [
@@ -40,8 +41,26 @@ export class SectionOrdersComponent implements OnInit
     }
 
   ];
+  total = 0;
+  page = 1;
+  limit = 10;
+
   ngOnInit()
   {
+    this.getOrders();
+  }
+
+  getOrders(): void
+  {
+    this._salesData.getOrders( this.page, this.limit ).subscribe( res =>
+    {
+      this.orders = res[ 'page' ][ 'data' ];
+    } );
+  }
+
+  goToPrevious(): void
+  {
+    console.log( "previous button clicked" );
   }
 
 }
